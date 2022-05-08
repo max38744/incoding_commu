@@ -5,17 +5,18 @@ import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
 
 
+
 function LogInPage() {
     const [Id, setId] = useState("");
     const [Password, setPassword] = useState("");
         
-    const onIdHandler = (e) => {
-      setId(e.currentTarget.value);
-    };
+    // const onIdHandler = (e) => {
+    //   setId(e.currentTarget.value);
+    // };
   
-    const onPasswordHandler = (e) => {
-      setPassword(e.currentTarget.value);
-    };
+    // const onPasswordHandler = (e) => {
+    //   setPassword(e.currentTarget.value);
+    // };
     
     const onClickLogin = () => {
         console.log('click login');
@@ -51,12 +52,15 @@ function LogInPage() {
               />
             </div>
             <Link to="/"><input type="submit" id={styles.login_btn} value="LOGIN" onClick={onClickLogin}></input></Link>
-            
+           
           </form>
             <Link to="/signup"><button id={styles.sign_up_btn}>Sign Up</button></Link>
-            <button id={styles.kakao_btn}>kakao로 로그인</button>
         </div>
-        
+        <div id={styles.textbox}>
+            <Link to ="/forgot">
+             <p>아이디 / 비밀번호 찾기</p>
+            </Link>
+        </div>
       </Layout>
     );
   }
