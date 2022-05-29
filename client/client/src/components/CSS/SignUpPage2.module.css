@@ -1,0 +1,11 @@
+html {
+    font-size: 10px;
+}
+
+input {
+    background: #FFFFFF;
+    border-top : none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 0.1rem solid #EDEDED;
+}

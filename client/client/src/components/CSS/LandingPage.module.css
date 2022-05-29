@@ -1,0 +1,93 @@
+/* @import url("./reset2.css"); */
+
+* {
+    font-size: 10px;
+}
+
+.yellowBtn {
+    text-align: center;
+    height: 4.9rem;
+    width: 21.8rem;
+    padding: 1.35rem 1rem;
+    background-color: #FFCC00;
+    border-radius: 0.9rem;
+
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+/* main 부분 */
+.main {
+    display: flex;
+    margin-top : 4.5rem;
+    margin-bottom: 5.0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainCatchphrase {
+    height: 40rem;
+    width: auto;
+}
+
+.mainText {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    height: 4.4rem;
+    text-align: center;
+}
+
+.mainSignup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
+    margin-top : 5.6rem;
+}
+
+/* footer 부분 */
+
+.footerArea {
+    background-color: #EDEDED;
+    height: 206px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5.5rem 4rem;  
+}
+
+.footerContainer {
+    display: flex;
+}
+
+.footerImg {
+    margin-right: 6.0rem;
+    width : 9.6rem;
+    height: 9.7rem;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.contentTitle {
+    width: 21.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.contentContent {
+    width: 22rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}

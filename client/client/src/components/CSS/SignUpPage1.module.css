@@ -11,6 +11,14 @@ html {
     font-family: noto-sans-cjk-kr,sans-serif;
 } */
 
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 /* 입력창 테두리 */
 input {
     background: #FFFFFF;
@@ -28,46 +36,51 @@ input {
     line-height: 2.2rem;
 }
 
-/* 로고 */
+/* 로고 
 #logo {
-    position: absolute;
+    position: flex;
     width: 7.6rem;
     height: 7.6rem;
     left: 3.7rem;
     top: 2rem;
 }
-
+*/
 /* p 태그 텍스트 */
 p {
     font-style: normal;
     font-weight: normal;
     font-size: 1.1rem;
     line-height: 1.6rem;
-
     color: #767676;
+}
+
+/*입력 공간 지정*/
+
+.inputBox {
+    position: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 타이틀 (회원가입) */
 
 .title {
-    position: absolute;
-    width: 35.5rem;
-    height: 3.6rem;
-    left: 54.2rem;
-    top: 14.4rem;
-
+    height: 206px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5.5rem 4rem;  
     font-weight: bold;
     font-style: normal;
     font-size: 2.4rem;
-    line-height: 3.6rem;
-    text-align: center;
-
     color: #000000;
 }
 
 /* 이름 */
 .nameArea {
-    position: absolute;
     width: 35.5rem;
     height: 8rem;
     left: 54.2rem;
@@ -75,7 +88,6 @@ p {
 }
 
 .name {
-    position: absolute;
     width: 35.5rem;
     height: 5rem;
     left: 0px;
@@ -84,7 +96,6 @@ p {
 
 /* 아이디 */
 .idArea {
-    position: absolute;
     width: 35.5rem;
     height: 8rem;
     left: 54.2rem;
@@ -92,7 +103,6 @@ p {
 }
 
 .id {
-    position: absolute;
     width: 35.5rem;
     height: 5rem;
     left: 0px;
@@ -101,15 +111,28 @@ p {
 
 /* 전화번호 */
 .phoneArea {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 35.5rem;
     height: 8rem;
     left: 54.2rem;
     top: 41.4rem;
 }
 
+.phoneArea_under{
+    display: flex;
+    flex-direction: row;
+    width: 35.5rem;
+    height: 8rem;
+    left: 54.2rem;
+    top: 41.4rem;
+}
+
+.phoneArea .label {
+    width: 10.5rem;
+}
+
 .phone {
-    position: absolute;
     width: 20.6rem;
     height: 4.9rem;
     left: 0rem;
@@ -118,7 +141,6 @@ p {
 }
 
 .phoneBtn {
-    position: absolute;
     width: 14rem;
     height: 4.9rem;
     left: 21.5rem;
@@ -139,7 +161,6 @@ p {
 
 /* 비밀번호 */
 .passwordArea {
-    position: absolute;
     width: 35.5rem;
     height: 9.6rem;
     left: 54.2rem;
@@ -147,7 +168,6 @@ p {
 }
 
 .password {
-    position: absolute;
     width: 35.5rem;
     height: 4.9rem;
     left: 0px;
@@ -156,7 +176,6 @@ p {
 
 /* 비밀번호 하단 텍스트 */
 .passwordArea > p {
-    position: absolute;
     width: 35.5rem;
     height: 1.6rem;
     left: 0rem;
@@ -167,7 +186,6 @@ p {
 
 /* 비밀번호 확인 */
 .checkPasswordArea {
-    position: absolute;
     width: 35.5rem;
     height: 9.6rem;
     left: 54.2rem;
@@ -176,7 +194,6 @@ p {
 }
 
 .checkPassword {
-    position: absolute;
     width: 35.5rem;
     height: 5rem;
     left: 0px;
@@ -185,7 +202,6 @@ p {
 
 /* 비밀번호 확인 하단 텍스트 */
 .checkPasswordArea > p {
-    position: absolute;
     width: 35.5rem;
     height: 1.6rem;
     left: 0rem;
@@ -195,12 +211,11 @@ p {
 
 /* 계속하기 버튼 */
 #sign_up_btn {
-    position: absolute;
     width: 35.5rem;
     height: 4.8rem;
     left: 54.2rem;
     top: 76.6rem;
-
+    margin-top : 3rem;
     background: #FFCC00;
     border-radius: 1.1rem;
     border: hidden;
@@ -214,11 +229,9 @@ p {
 
 /* 최하단 텍스트 박스 */
 #textbox {
-    position: absolute;
-    width: 35.5rem;
-    height: 6.2rem;
-    left: 54.2rem;
-    top: 82.8rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 #textbox > p {

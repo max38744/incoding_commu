@@ -42,44 +42,49 @@ function SignUpPage() {
       <Layout>
         <div>
           <h1 className={styles.title}>회원가입</h1>
-          <form>
-            <div className={styles.nameArea}>
-              <label className={styles.label} htmlFor="name">이름</label>
-              <input className={styles.name} type="text" id="name" />
-            </div>
-            <div className={styles.idArea}>
-              <label className={styles.label} htmlFor="id">아이디</label>
-              <input className={styles.id} type="email" id="id" />
-            </div>
-            <div className={styles.phoneArea}>
-              <label className={styles.label} htmlFor="phone">전화번호</label>
-              <input className={styles.phone} type="tel" id="phone" />
-              <input type="button" className={styles.phoneBtn} value="전화번호 인증" />
-            </div>
-            <div className={styles.passwordArea}>
-              <label className={styles.label} htmlFor="password">비밀번호</label>
-              <input
-                className={styles.password}
-                type="password"
-                id="password"
-                minlength="8"
-                maxlength="16"
-              />
-              <p>8 ~ 16자 이내, 영문과 숫자 조합</p>
-            </div>
-            <div className={styles.checkPasswordArea}>
-              <label className={styles.label} htmlFor="check_password">비밀번호 확인</label>
-              <input
-                className={styles.checkPassword}
-                type="password"
-                id="check_password"
-                minlength="8"
-                maxlength="16"
-              />
-              <p>비밀번호 일치</p>
-            </div>
-            <Link to="/signup2"><input type="submit" id={styles.sign_up_btn} value="계속하기"></input></Link>
-          </form>
+          <div className={styles.inputBox}>
+            <form>
+              <div className={styles.nameArea}>
+                <label className={styles.label} htmlFor="name">이름</label>
+                <input className={styles.name} type="text" id="name" />
+              </div>
+              <div className={styles.idArea}>
+                <label className={styles.label} htmlFor="id">아이디(이메일)</label>
+                <input className={styles.id} type="email" id="id" />
+              </div>
+              <div className={styles.phoneArea}>
+                <label className={styles.label} htmlFor="phone">전화번호</label>
+                <div className={styles.phoneArea_under}>
+                  <input className={styles.phone} type="tel" id="phone" />
+                  <input type="button" className={styles.phoneBtn} value="전화번호 인증" />
+                </div>
+              </div>
+              <div className={styles.passwordArea}>
+                <label className={styles.label} htmlFor="password">비밀번호</label>
+                <input
+                  className={styles.password}
+                  type="password"
+                  id="password"
+                  minlength="8"
+                  maxlength="16"
+                />
+                <p>8 ~ 16자 이내, 영문과 숫자 조합</p>
+              </div>
+              <div className={styles.checkPasswordArea}>
+                <label className={styles.label} htmlFor="check_password">비밀번호 확인</label>
+                <input
+                  className={styles.checkPassword}
+                  type="password"
+                  id="check_password"
+                  minlength="8"
+                  maxlength="16"
+                />
+                <p>비밀번호 일치</p>
+              </div>
+              <Link to="/signup2"><input type="submit" id={styles.sign_up_btn} value="계속하기"></input></Link>
+            </form>
+          </div>
+          
           <div id={styles.textbox}>
             <p>
               계정이 이미 있다면 <Link to="/login">로그인</Link>{" "}
