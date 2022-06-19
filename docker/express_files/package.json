@@ -1,0 +1,22 @@
+{
+  "name": "incoding-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "core-js": "^3.0.0",
+    "cookie-parse": "^0.4.0",
+    "debug": "~2.6.9",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mkdirp": "^1.0.4",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.0"
+  },
+
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
