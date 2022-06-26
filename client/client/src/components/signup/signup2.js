@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import styles from "../CSS/SignUpPage2.module.css";
 import Layout from "../Layout/Layout";
 import { withRouter, Link } from "react-router-dom";
@@ -92,4 +92,4 @@ function SignUpPage2() {
   }
   
   export default SignUpPage;
-  
+  */
