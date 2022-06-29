@@ -32,6 +32,8 @@ form {
 
 
 .idforgot{
+    display: flex;
+    justify-content: center;
     height: 30rem;
     left : 23rem;
     top : 26rem;

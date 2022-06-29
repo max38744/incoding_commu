@@ -3,48 +3,90 @@ import styles from "../CSS/ForgotPage.module.css";
 import Layout from "../Layout/Layout";
 import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
+import styled from "styled-components";
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import { Container } from "@mui/system";
+import IdForm from "./IdForm";
+
+const ForgotContainer = styled.div`
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items : center;
+    width : 100%;
+`;
+
+const ForgotID = styled.div`
+  font-size: 20px;
+`;
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+export default function ForgotPage() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Layout>
+      <ForgotContainer>
+        <Box sx={{ width: '50%', border: 'solid 0.5px lightgray'}}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+              <Tab label="아이디 찾기" {...a11yProps(0)} sx={{}}/>
+              <Tab label="패스워드 찾기" {...a11yProps(1)} />
+            </Tabs>
+          </Box>
+        
+          <TabPanel value={value} index={0}>
+            <ForgotID>
+              <IdForm></IdForm>
+            </ForgotID>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            패스워드 찾기
+          </TabPanel>
+        </Box>
+      </ForgotContainer>
+    </Layout>
+  );
+}
 
 
-
-function ForgotPage() {
-    const [Id, setId] = useState("");
-    const [Password, setPassword] = useState("");
-    
-    const onClickLogin = () => {
-        console.log('click login');
-        //여기에 이제 로그인할때 뭔가 전달하는걸 해야할것같은데,,,
-        axios.post('/user_inform/onLogin', null, {
-          params: {
-            'user_id' : Id,
-            'user_pw' : Password
-          }
-        })
-        .then(res => console.log(res))
-        .catch()
-      };
-   
-  
-    return (
-      <Layout>
-          <h1 className={styles.title}>아이디 / 비밀번호 찾기</h1>
-          <div className={styles.main}>  
-            <div className={styles.idforgot}>
-                아이디 찾기
-              <form>
-                <label className={styles.nameArea} htmlFor="name">이름</label>
-                <input className={styles.name} type="text" id="name" />
-                <label className={styles.phoneArea} htmlFor="phone">전화번호</label>
-                <input className={styles.phone} type="text" id="phone" />
-              
-                <Link to="/idforgot"><input type="submit" id={styles.idforgot_btn} value="ID 찾기"></input></Link>
-              </form>
-            </div>
-            <div className={styles.vline}></div>
-            <div className={styles.pwforgot}>비밀번호찾기</div>
-        </div>
-      </Layout>
-    );
-  }
-  
-  export default ForgotPage;
-  
