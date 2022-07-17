@@ -1,11 +1,18 @@
-import React, { Fragment, useState } from "react";
+import { useScrollTrigger } from "@mui/material";
+import React, { Component, Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../CSS/LandingPage.module.css";
 import Layout from '../Layout/Layout';
-
+import axios from 'axios';
 
 function LandingPage() {
-  return (
+
+  useEffect(() => {
+    axios.get('/api/data')
+    .then(res => console.log(res.data))
+  }, [])
+  
+    return (
     <Fragment>
       <Layout />
         <div className={styles.main}>
@@ -16,7 +23,6 @@ function LandingPage() {
             Let's Change the world! <br/>
             인코딩과 함께라면 야.. 너도 할 수 있어.
           </div>
-
           <div className={styles.mainSignup}>
           <Link to="/login">
               <button className={styles.yellowBtn}>로그인하러 가기</button>
